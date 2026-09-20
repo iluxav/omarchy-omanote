@@ -1,0 +1,5 @@
+# The omanote release this plugin installs, with the SHA-256 of each build.
+# Written by update-pin.sh; install-omanote.sh refuses anything that does not match.
+version=v0.0.8
+sha256 649cc630facbdf13e48c3ef859227f9708b57aa288f131e3a4e363692d3cbe60 omanote-aarch64-unknown-linux-musl.tar.gz
+sha256 f66814da2435cf46faa54004b88772c5371c0d1bd9b01ffd445e39519e107855 omanote-x86_64-unknown-linux-musl.tar.gz

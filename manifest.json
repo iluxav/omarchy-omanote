@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "iluxav.omanote",
+  "name": "Omanote",
+  "version": "0.2.0",
+  "author": "iluxav",
+  "description": "Obsidian-style markdown notes in your terminal: live preview, tables, images and GitHub-synced vaults. Find, start or jot a note straight from the bar.",
+  "kinds": [
+    "bar-widget",
+    "overlay"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "barWidget": "OmanoteWidget.qml",
+    "overlay": "Omni.qml"
+  },
+  "barWidget": {
+    "displayName": "Omanote",
+    "description": "Find or start a note; right-click to jot one down",
+    "category": "Apps",
+    "defaultSection": "right",
+    "allowMultiple": false
+  }
+}
