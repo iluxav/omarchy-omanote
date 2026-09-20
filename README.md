@@ -4,6 +4,8 @@
 
 **Obsidian-style notes that live in your terminal.** [omanote](https://github.com/iluxav/omanote) is a markdown editor and viewer in one: what you write renders as you write it, and the raw syntax only shows on the line you are editing. It is a single small binary with nothing to configure, as quick to open as `nano`. This plugin puts it one click, or one key, away.
 
+![omanote editing a note in the terminal](preview.png)
+
 **What you get**
 
 - **Live preview, no modes.** Headings, **bold**, lists, quotes, checkboxes you can click, code blocks. Just type; the usual `Ctrl+Z` / `Ctrl+C` / `Ctrl+V` and the mouse all work.
