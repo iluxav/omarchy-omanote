@@ -4,7 +4,7 @@
 
 **Obsidian-style notes that live in your terminal.** [omanote](https://github.com/iluxav/omanote) is a markdown editor and viewer in one: what you write renders as you write it, and the raw syntax only shows on the line you are editing. It is a single small binary with nothing to configure, as quick to open as `nano`. This plugin puts it one click, or one key, away.
 
-![omanote editing a note in the terminal](preview.png)
+![omanote editing a note in the terminal, with the menu of AI agents that can open beside it](preview.png)
 
 **What you get**
 
@@ -13,6 +13,7 @@
 - **Images in the terminal.** Local files, images from the web, and screenshots pasted straight in with `Ctrl+V`: real pixels in Ghostty and Kitty, a preview elsewhere.
 - **Links that stay out of the way.** `[text](url)` and `[[wiki links]]` show as clean text, with the address hidden until you edit the line.
 - **Vaults, including GitHub.** Keep notes in as many folders as you like. Add a GitHub repo as a vault and it syncs itself in the background: pulled when you open a note, committed and pushed after you write, never making you wait.
+- **An AI agent beside the note.** `Ctrl+G` opens Claude Code, Codex, Gemini, opencode or whichever agent CLI you have installed, in a pane inside omanote, already pointed at the note you are writing. Its edits appear in the note as they land.
 - **Plain files.** Every note is ordinary markdown on disk, so it works with git, grep and any other editor.
 
 **What the plugin adds to your desktop**
