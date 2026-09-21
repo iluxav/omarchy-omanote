@@ -19,7 +19,7 @@
 **What the plugin adds to your desktop**
 
 - **A notes icon in the bar.** Click for the search popup, right-click to jot a quick note, middle-click to sync your GitHub vaults.
-- **Search popup**, in the style of the Omarchy menu. Type to find a note in any vault: the name, then the vault it lives in, dimmed. `Enter` opens it. With nothing typed, or nothing matching, `Enter` starts a new note.
+- **Search popup**, in the style of the Omarchy menu. Type to find a note in any vault: the name, then the vault it lives in, dimmed. `Enter` opens it. With nothing typed, or nothing matching, `Enter` starts a new note. Start with `>` to search inside the notes instead: `>kyoto rail` lists every line that has both words, with the note and line number beside it, and `Enter` opens the note on that line.
 - **Quick capture.** A one-line box: type, `Enter`, and the line is in your inbox note. No editor, no window.
 
 ## Install

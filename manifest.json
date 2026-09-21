@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "iluxav.omanote",
   "name": "Omanote",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "iluxav",
   "description": "Obsidian-style markdown notes in your terminal: live preview, tables, images and GitHub-synced vaults. Find, start or jot a note straight from the bar.",
   "kinds": [
