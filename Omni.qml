@@ -191,24 +191,42 @@ Item {
 
   // ---- capture ------------------------------------------------------------
 
+  // The note goes to omanote over standard input, never as an argument: the
+  // arguments of a running program are in the process list, where any other
+  // program can read them. `read` and `printf` are shell builtins, so the
+  // note is not in an argument list on the way either. It never goes into a
+  // notification, which the notification history would keep.
   function capture() {
     var line = root.text.trim()
-    root.dismiss()
-    if (!line) return
+    if (!line || captureProc.running) return
     captureProc.line = line
-    captureProc.command = ["bash", "-lc", "omanote --capture \"$1\"", "omanote-capture", line]
+    captureProc.command = ["bash", "-lc", "IFS= read -r note; printf '%s\\n' \"$note\" | omanote --capture"]
     captureProc.running = true
   }
 
   // Run it rather than fire and forget: a missing `omanote` should say so
-  // instead of swallowing the note.
+  // instead of swallowing the note. The popup stays open with the note in it
+  // until it is saved, so a failure loses nothing.
   Process {
     id: captureProc
     property string line: ""
+    stdinEnabled: true
+    stderr: StdioCollector { id: captureErr; waitForEnd: true }
+    onStarted: {
+      write(captureProc.line + "\n")
+      captureProc.line = ""
+    }
     onExited: function(exitCode) {
-      if (exitCode === 0) root.notify("Noted", captureProc.line)
-      else if (exitCode === 127) root.notify("omanote is not installed", "Click the notes icon in the bar to install it. Your note was: " + captureProc.line)
-      else root.notify("Could not save the note", captureProc.line)
+      if (exitCode === 0) {
+        root.dismiss()
+        root.notify("Noted", "Added to your inbox.")
+      } else if (exitCode === 127) {
+        root.notify("omanote is not installed", "Click the notes icon in the bar to install it. Your note is still in the box.")
+      } else {
+        // An omanote from before notes came over standard input has nothing to capture.
+        var why = (captureErr.text || "").indexOf("nothing to capture") >= 0 ? "This needs a newer omanote. Update it the way you installed it." : "omanote could not write it."
+        root.notify("Could not save the note", why + " Your note is still in the box.")
+      }
     }
   }
 

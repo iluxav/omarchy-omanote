@@ -61,7 +61,7 @@ trap 'rm -rf "$tmp"' EXIT
 
 curl -fsSL "$url" -o "$tmp/$asset" || die "download failed"
 got=$(sha256sum "$tmp/$asset" | awk '{ print $1 }')
-[[ $got == "$want" ]] || die "checksum mismatch — expected $want, got $got. Nothing was installed."
+[[ $got == "$want" ]] || die "checksum mismatch - expected $want, got $got. Nothing was installed."
 echo "Checksum OK."
 
 tar -xzf "$tmp/$asset" -C "$tmp"
